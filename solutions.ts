@@ -5,5 +5,11 @@ const filterEvenNumbers = (numbersArr: number[]) => {
     return result;
 }
 
-const numbers = [1, 2, 3, 4, 5, 6];
-console.log(filterEvenNumbers(numbers));
+
+// Problem: 2
+
+const reverseString = (text: string) => {
+    const reversed = text.split('').reverse().join('');
+    return `"${reversed}"`;
+}
+
