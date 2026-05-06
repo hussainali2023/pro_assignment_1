@@ -27,3 +27,7 @@ const checkType = (data: string | number) => {
 
 // problem: 4 
 
+const getProperty = <T>(obj: T, key: keyof T) => {
+    const result = obj[key];
+    return result;
+}
