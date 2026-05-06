@@ -13,3 +13,17 @@ const reverseString = (text: string) => {
     return `"${reversed}"`;
 }
 
+
+// Problem: 3`
+
+const checkType = (data: string | number) => {
+    if(typeof data === 'string') {
+        return `"String"`;
+    } else {
+        return `"Number"`;
+    }
+}
+
+
+// problem: 4 
+
