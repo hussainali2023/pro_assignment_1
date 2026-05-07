@@ -1,28 +1,35 @@
 // Problem: 1 
 
-const filterEvenNumbers = (numbersArr: number[]) => {
+const filterEvenNumbers = (numbersArr: number[]): number[] => {
     const result = numbersArr.filter((n) => n % 2 === 0);
     return result;
 }
 
 
+
 // Problem: 2
 
-const reverseString = (text: string) => {
+const reverseString = (text: string): string => {
     const reversed = text.split('').reverse().join('');
     return reversed;
 }
 
 
+
+
 // Problem: 3`
 
-const checkType = (data: string | number) => {
+type StringOrNumber = string | number;
+
+const checkType = (data: StringOrNumber): string => {
     if(typeof data === 'string') {
         return "String";
     } else {
         return "Number";
     }
 }
+
+
 
 
 // problem: 4 
@@ -32,6 +39,10 @@ const getProperty = <T>(obj: T, key: keyof T) => {
     return result;
 }
 
+
+
+
+
 // Problem: 5
 
 interface Book {
@@ -40,10 +51,12 @@ interface Book {
     publishedYear: number;
 }
 
-const toggleReadStatus = (book: Book, isRead:boolean = true) => {
-    const result =  {...book, isRead}
+const toggleReadStatus = (book: Book) => {
+    const result =  {...book, isRead: true}
     return result;
 }
+
+
 
 
 // Problem: 6
@@ -70,4 +83,20 @@ class Student extends Person {
     getDetails(){
         return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
     }
+}
+
+
+
+
+
+// Problem: 7
+
+
+const getIntersection = (array1: number[], array2: number[]) => {
+    const newArr: number[] = [];
+    for(let i = 0; i < array1.length; i++){
+        if(array2.includes(array1[i]))
+            newArr.push(array1[i]);
+    }
+    return newArr;
 }
