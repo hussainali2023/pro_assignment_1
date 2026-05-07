@@ -10,7 +10,7 @@ const filterEvenNumbers = (numbersArr: number[]) => {
 
 const reverseString = (text: string) => {
     const reversed = text.split('').reverse().join('');
-    return `"${reversed}"`;
+    return reversed;
 }
 
 
@@ -18,9 +18,9 @@ const reverseString = (text: string) => {
 
 const checkType = (data: string | number) => {
     if(typeof data === 'string') {
-        return `"String"`;
+        return "String";
     } else {
-        return `"Number"`;
+        return "Number";
     }
 }
 
@@ -30,4 +30,44 @@ const checkType = (data: string | number) => {
 const getProperty = <T>(obj: T, key: keyof T) => {
     const result = obj[key];
     return result;
+}
+
+// Problem: 5
+
+interface Book {
+    title: string;
+    author: string;
+    publishedYear: number;
+}
+
+const toggleReadStatus = (book: Book, isRead:boolean = true) => {
+    const result =  {...book, isRead}
+    return result;
+}
+
+
+// Problem: 6
+
+class Person {
+    name: string;
+    age: number;
+
+    constructor(name:string, age:number){
+        this.name = name;
+        this.age = age;
+    }
+}
+
+
+class Student extends Person {
+    grade: string;
+    
+    constructor(name:string, age:number, grade:string){
+        super(name, age);
+        this.grade = grade;
+    }
+
+    getDetails(){
+        return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
+    }
 }
